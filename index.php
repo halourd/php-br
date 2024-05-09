@@ -69,7 +69,8 @@
 
                 if(mysqli_num_rows($result) > 0){
                     while($row = mysqli_fetch_assoc($result)){
-            
+                        //ROW 1
+                        if($row['role'] == "Student"){
                         ?>
                         <tr>
                             <td><?= $row['student_id'] ?></td>
@@ -91,7 +92,7 @@
                                 <a href="delete.php?id=<?= $row['student_id']?>" class="link-dark"><i class="fa-solid fa-trash fs-5 me-3"></i></a>
                             </td>
                         </tr>
-                        <?php }}else{ ?>
+                        <?php }}}else{ ?>
                             <td class="text-center fw-bold" colspan="14">No results Found.</td>
 
     

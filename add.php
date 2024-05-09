@@ -136,7 +136,7 @@ if(isset($_POST['register'])){
                                 </div>
                                 <div class= "text-center mb-3 ">
                                     <button class="btn btn-primary" name="register">Add student</button>
-                                    <a href="index.php" class="btn btn-success">Cancel</a>
+                                    <a href="index.php" class="btn btn-danger">Cancel</a>
                                 </div>
                             </form>
                         </div>

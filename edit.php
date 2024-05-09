@@ -135,7 +135,7 @@ if(mysqli_num_rows($result) > 0){
                                 </div>
                                 <div class= "text-center my-3 ">
                                     <input class="btn btn-success " type="submit" name="update" value="Update">
-                                    <a href="index.php" class="btn btn-success">Cancel</a>
+                                    <a href="index.php" class="btn btn-danger">Cancel</a>
                                 </div>
                             </form>
                         </div>

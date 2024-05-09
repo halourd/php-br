@@ -1,38 +1,75 @@
 <?php
 require_once 'config.php';
 
-$error = "";
+$error = null;
 
-if(isset($_POST['submit'])){
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    
-    if($role == "admin" && $email == "admin@gmail.com" && $password == "admin12345"){
-        header("Location: index.php");
-        exit;
-    }else{
-        $error = "Invalid Email and Password";
-        
+ if(isset($_POST['submit'])){
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
+
+    //check if email is valid
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        $error = "*Invalid Email";
     }
 
-    if($role == "student"){
-        $sql = "SELECT * FROM `tbl_student_info` WHERE `email` = '$email' AND `password` = '$password' ";
-        $result = mysqli_query($conn , $sql);
-
-        if(mysqli_num_rows($result) == 1 ){
-            $row = mysqli_fetch_assoc($result);
-                header("Location: account.php");
-                exit;
-            }
-        } else {
-            $error = "*Invalid email and password";
+    $sql = "SELECT * FROM `tbl_student_info` WHERE `email` = '$email' AND `password` = '$password' ";
+    $result = mysqli_query($conn, $sql);
+    
+    if(mysqli_num_rows($result) == 1){
+        $row = mysqli_fetch_assoc($result);
+        if($row['role'] == "Administrator"){
+            $_SESSION['id'] = $row['$student_id'];
+            session_start();
+            header("Location: index.php");
+            exit;
         }
-    } else{
-        echo "<script>
-                    alert('Account not Found!');
-                    location.href = login.php';
-                </script>";
-}
+        
+        if($row['role'] == "Student"){
+            session_id($row['$student_id']);
+            session_start();
+            header("Location: account.php");
+            exit;
+        }
+
+        $error = "Account not Administrator";
+    }else {
+        $error = "Sorry, email or password is invalid";
+    }
+    
+
+ }
+
+// if(isset($_POST['submit'])){
+//     $email = $_POST['email'];
+//     $password = $_POST['password'];
+    
+//     if($role == "admin" && $email == "admin@gmail.com" && $password == "admin12345"){
+//         header("Location: index.php");
+//         exit;
+//     }else{
+//         $error = "Invalid Email and Password";
+        
+//     }
+
+//     if($role == "student"){
+//         $sql = "SELECT * FROM `tbl_student_info` WHERE `email` = '$email' AND `password` = '$password' ";
+//         $result = mysqli_query($conn , $sql);
+
+//         if(mysqli_num_rows($result) == 1 ){
+//             $row = mysqli_fetch_assoc($result);
+//                 header("Location: account.php");
+//                 exit;
+//             }
+//         } else {
+//             $error = "*Invalid email and password";
+//         }
+//     } else{
+//         echo "<script>
+//                     alert('Account not Found!');
+//                     location.href = login.php';
+//                 </script>";
+// }
+
 
 ?>
 
@@ -71,14 +108,6 @@ if(isset($_POST['submit'])){
                             <div class="form-group d-flex flex-row align-items-center">
                                 <i class="fa-solid fa-lock fa-lg"></i>
                                 <input type="password" class="form-control mx-2" name="password" placeholder="Password">
-                            </div>
-                            <div class="form-check form-check-inline mt-2">
-                                <input type="radio" id="student" name="role" value="student" checked>
-                                <label class="form-check-label" for="student">Student</label>
-                            </div>
-                            <div class="form-check form-check-inline text-center">
-                                <input type="radio" id="admin" name="role" value="admin">
-                                <label class="form-check-label" for="admin">Admin</label>
                             </div>
                             <div class="d-grid gap-1 mt-3">
                                 <button type="submit" class="btn btn-primary m-2" name="submit">Log in</button>
