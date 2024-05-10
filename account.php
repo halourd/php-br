@@ -11,22 +11,26 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-sm justify-content-center  text-light fw-bold  mb-5 bg-primary">
+<nav class="navbar navbar-expand-lg justify-content-center  text-light fw-bold  mb-5 p-3" style="background-color: #00308F;">
     <div class="container">
-        <!-- <a class="navbar-brand ">PHP Complete Crud application</a> -->
+        <a class="navbar-brand  text-light fs-4">PHP Complete Crud Application</a>
         <div class="float-end">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="studentDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user fa-xl"></i></a>
-                    <ul class="dropdown-menu" aria-labelledby="studentDropdown">
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <hr><li><a class="dropdown-item" href="#">Lesson</a></li>
-                        <hr><li><a class="dropdown-item" href="#">Attendance</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="homepage.php">Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
+        <ul class="navbar-nav fs-5 ">
+        <li class="nav-item ">
+          <a class="nav-link text-light " aria-current="page" href="#">Subject</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#">Attendance</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#">Notes</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             Student Profile </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+          </ul>
         </div>
     </div>
 </nav>

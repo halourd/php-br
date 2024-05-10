@@ -11,32 +11,36 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-sm justify-content-center  text-light fw-bold  mb-5 bg-info" style="background-color: gray;">
+<nav class="navbar navbar-expand-lg justify-content-center fw-bold  mb-5 p-3" style="background-color: #00308F;">
     <div class="container">
-        <a class="navbar-brand ">PHP Complete Crud application</a>
+        <a class="navbar-brand  text-light fs-4">PHP Complete Crud Application</a>
         <div class="float-end">
-            <ul class="navbar-nav">
-                <li class="navbar-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
-                    <ul class="dropdown-menu" aria-labelledby="adminDropdown">
-                        <li><a class="dropdown-item" href="#">Manage Students</a></li>
-                        <hr><li><a class="dropdown-item" href="#">Manage Courses</a></li>
-                        <hr><li><a class="dropdown-item" href="#">Generate Reports</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="homepage.php">Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
+        <ul class="navbar-nav fs-5 ">
+        <li class="nav-item ">
+          <a class="nav-link text-light " aria-current="page" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#">Reports</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#">Analytics</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             Admin</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+          </ul>
         </div>
     </div>
 </nav>
-<div class="container  pt-5 px-4  my-5 border rounded border=0 shadow bg-light">
+<div class="container  pt-5 px-4  my-5 border rounded border=0 shadow ">
     <div class="text-center mb-4">
         <h2 style="font-family: Georgia, serif;">CRUD Operations for Student Information</h2>
         <small class="text-muted text-small fst-italic">Integrative Programming and Technologies</small>
     </div>
     <div class="mb-3">
-        <a href="homepage.php" class="btn btn-sm btn-success"><i class="fa-solid fa-house"></i></a>
+        <a href="homepage.php" class="btn btn-sm btn-danger"><i class="fa-solid fa-house"></i></a>
         <a href="add.php" class="btn btn-sm btn-primary">Add New <i class="fa-solid fa-circle-plus"></i></a>
     </div>
     <div class="table-responsive">

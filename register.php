@@ -9,8 +9,8 @@ if(isset($_POST['register'])) {
     $middlename = $_POST['middlename'];
     $lastname = $_POST['lastname'];
     $age = $_POST['age'];
-    $gender = $_POST['gender'];
-    $course = $_POST['course'];
+    $gender = isset($_POST['gender']) ? $_POST['gender'] : '';
+    $course = isset($_POST['course']) ? $_POST['course'] : '';
     $year = $_POST['year'];
     $section = $_POST['section'];
     $nationality = $_POST['nationality'];
