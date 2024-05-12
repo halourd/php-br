@@ -98,7 +98,13 @@ if(isset($_POST['register'])){
                                     </div>
                                     <div class="col-lg-2 col-md-12 ">
                                         <label for="year" class="form-label mt-2">Year</label>
-                                        <input type="number"  id="year" class="form-control" name="year" required >
+                                        <select class="form-select " name="year" id="year" placeholder ="Select your Course" >
+                                            <option value="" disabled selected>Select your Year</option>
+                                            <option value="1st">1st</option>
+                                            <option value="2nd">2nd</option>
+                                            <option value="3rd">3rd</option>
+                                            <option value="4th">4th</option>
+                                        </select>
                                     </div>
                                     <div class="col-lg-2 col-md-12 ">
                                         <label for="section" class="form-label mt-2">Section</label>

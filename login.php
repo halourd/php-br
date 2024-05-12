@@ -14,6 +14,7 @@ $error = null;
 
     $sql = "SELECT * FROM `tbl_student_info` WHERE `email` = '$email' AND `password` = '$password' ";
     $result = mysqli_query($conn, $sql);
+    $_SESSION['student_id'] = $row['student_id'];
     
     if(mysqli_num_rows($result) == 1){
         $row = mysqli_fetch_assoc($result);

@@ -100,9 +100,13 @@ if(mysqli_num_rows($result) > 0){
                                             <option value="BSIS"<?= ($course == 'BSIS') ? 'selected' : ''?>>BSIS</option>
                                         </select>
                                     </div>
-                                    <div class="col-lg-2 col-md-12">
-                                        <label for="year" class="form-label mt-2">Year</label>
-                                        <input type="number" id="year" class="form-control" name="year" value="<?=$year?>" required>
+                                    <div class="col-lg-2 col-md-6">
+                                        <label for="gender" class="form-label mt-2">Gender</label>
+                                        <select class="form-select" name="gender" id="gender" required>
+                                            <option value="Female"<?= ($gender == 'Female') ? 'selected' : ''?>>Female</option>
+                                            <option value="Male"<?= ($gender == 'Male') ? 'selected' : ''?>>Male</option>
+                                            <option value="Others"<?= ($gender == 'Others') ? 'selected' : ''?>>Others</option>
+                                        </select>
                                     </div>
                                     <div class="col-lg-2 col-md-12">
                                         <label for="section" class="form-label mt-2">Section</label>
